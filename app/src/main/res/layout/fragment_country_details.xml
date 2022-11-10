@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.CountryDetailsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="24dp"
+            android:paddingBottom="25dp">
+
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/country_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                tools:text="Andorra"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="25dp"
+                android:background="@color/cardview_dark_background"
+                app:layout_constraintTop_toBottomOf="@+id/back_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/population_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/population_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/top_constraint"
+                app:layout_constraintStart_toStartOf="@+id/top_constraint"/>
+
+            <TextView
+                android:id="@+id/population"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="77,289"
+                app:layout_constraintStart_toEndOf="@+id/population_label"
+                app:layout_constraintTop_toTopOf="@+id/population_label"
+                app:layout_constraintBottom_toBottomOf="@id/population_label"/>
+
+            <TextView
+                android:id="@+id/region_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/region_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/population_label"
+                app:layout_constraintStart_toStartOf="@+id/population_label"/>
+
+            <TextView
+                android:id="@+id/region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Europe"
+                app:layout_constraintStart_toEndOf="@+id/region_label"
+                app:layout_constraintTop_toTopOf="@+id/region_label"
+                app:layout_constraintBottom_toBottomOf="@id/region_label"/>
+
+            <TextView
+                android:id="@+id/capital_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/capital_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/region_label"
+                app:layout_constraintStart_toStartOf="@+id/region_label"/>
+
+            <TextView
+                android:id="@+id/capital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Andora la Vella"
+                app:layout_constraintStart_toEndOf="@+id/capital_label"
+                app:layout_constraintTop_toTopOf="@+id/capital_label"
+                app:layout_constraintBottom_toBottomOf="@id/capital_label"/>
+
+            <TextView
+                android:id="@+id/motto_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/motto_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/capital_label"
+                app:layout_constraintStart_toStartOf="@+id/capital_label"/>
+
+            <TextView
+                android:id="@+id/motto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Virtus unita fortior"
+                app:layout_constraintStart_toEndOf="@+id/motto_label"
+                app:layout_constraintTop_toTopOf="@+id/motto_label"
+                app:layout_constraintBottom_toBottomOf="@id/motto_label"/>
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/official_language_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/official_language_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/motto_label"
+                app:layout_constraintStart_toStartOf="@+id/motto_label"/>
+
+            <TextView
+                android:id="@+id/official_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Catalan"
+                app:layout_constraintStart_toEndOf="@+id/official_language_label"
+                app:layout_constraintTop_toTopOf="@+id/official_language_label"
+                app:layout_constraintBottom_toBottomOf="@id/official_language_label"/>
+
+            <TextView
+                android:id="@+id/ethnic_group_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/ethnic_group_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/official_language_label"
+                app:layout_constraintStart_toStartOf="@+id/official_language_label"/>
+
+            <TextView
+                android:id="@+id/ethnic_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Andorran, Spanish, Portuguese"
+                app:layout_constraintStart_toEndOf="@+id/ethnic_group_label"
+                app:layout_constraintTop_toTopOf="@+id/ethnic_group_label"
+                app:layout_constraintBottom_toBottomOf="@id/ethnic_group_label"/>
+
+            <TextView
+                android:id="@+id/religion_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/religion_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/ethnic_group_label"
+                app:layout_constraintStart_toStartOf="@+id/ethnic_group_label"/>
+
+            <TextView
+                android:id="@+id/religion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Christianity"
+                app:layout_constraintStart_toEndOf="@+id/religion_label"
+                app:layout_constraintTop_toTopOf="@+id/religion_label"
+                app:layout_constraintBottom_toBottomOf="@id/religion_label"/>
+
+            <TextView
+                android:id="@+id/government_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/government_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/religion_label"
+                app:layout_constraintStart_toStartOf="@+id/religion_label"/>
+
+            <TextView
+                android:id="@+id/government"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Parliamentary democracy"
+                app:layout_constraintStart_toEndOf="@+id/government_label"
+                app:layout_constraintTop_toTopOf="@+id/government_label"
+                app:layout_constraintBottom_toBottomOf="@id/government_label"/>
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/independence_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/independence_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/government_label"
+                app:layout_constraintStart_toStartOf="@+id/government_label"/>
+
+            <TextView
+                android:id="@+id/independence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="8th September, 1278"
+                app:layout_constraintStart_toEndOf="@+id/independence_label"
+                app:layout_constraintTop_toTopOf="@+id/independence_label"
+                app:layout_constraintBottom_toBottomOf="@id/independence_label"/>
+
+            <TextView
+                android:id="@+id/area_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/area_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/independence_label"
+                app:layout_constraintStart_toStartOf="@+id/independence_label"/>
+
+            <TextView
+                android:id="@+id/area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="467.63 km2"
+                app:layout_constraintStart_toEndOf="@+id/area_label"
+                app:layout_constraintTop_toTopOf="@+id/area_label"
+                app:layout_constraintBottom_toBottomOf="@id/area_label"/>
+
+            <TextView
+                android:id="@+id/currency_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/currency_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/area_label"
+                app:layout_constraintStart_toStartOf="@+id/area_label"/>
+
+            <TextView
+                android:id="@+id/currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Euro"
+                app:layout_constraintStart_toEndOf="@+id/currency_label"
+                app:layout_constraintTop_toTopOf="@+id/currency_label"
+                app:layout_constraintBottom_toBottomOf="@id/currency_label"/>
+
+            <TextView
+                android:id="@+id/gdp_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/gdp_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/currency_label"
+                app:layout_constraintStart_toStartOf="@+id/currency_label"/>
+
+            <TextView
+                android:id="@+id/gdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="US$3.400 billion"
+                app:layout_constraintStart_toEndOf="@+id/gdp_label"
+                app:layout_constraintTop_toTopOf="@+id/gdp_label"
+                app:layout_constraintBottom_toBottomOf="@id/gdp_label"/>
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/time_zone_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/time_zone_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/gdp_label"
+                app:layout_constraintStart_toStartOf="@+id/gdp_label"/>
+
+            <TextView
+                android:id="@+id/time_zone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="UTC+01"
+                app:layout_constraintStart_toEndOf="@+id/time_zone_label"
+                app:layout_constraintTop_toTopOf="@+id/time_zone_label"
+                app:layout_constraintBottom_toBottomOf="@id/time_zone_label"/>
+
+            <TextView
+                android:id="@+id/date_format_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/date_format_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/time_zone_label"
+                app:layout_constraintStart_toStartOf="@+id/time_zone_label"/>
+
+            <TextView
+                android:id="@+id/date_format"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="dd/mm/yy"
+                app:layout_constraintStart_toEndOf="@+id/date_format_label"
+                app:layout_constraintTop_toTopOf="@+id/date_format_label"
+                app:layout_constraintBottom_toBottomOf="@id/date_format_label"/>
+
+            <TextView
+                android:id="@+id/dialling_code_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/dialing_code_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/date_format_label"
+                app:layout_constraintStart_toStartOf="@+id/date_format_label"/>
+
+            <TextView
+                android:id="@+id/dialling_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="+376"
+                app:layout_constraintStart_toEndOf="@+id/dialling_code_label"
+                app:layout_constraintTop_toTopOf="@+id/dialling_code_label"
+                app:layout_constraintBottom_toBottomOf="@id/dialling_code_label"/>
+
+            <TextView
+                android:id="@+id/driving_side_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/driving_side_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/dialling_code_label"
+                app:layout_constraintStart_toStartOf="@+id/dialling_code_label"/>
+
+            <TextView
+                android:id="@+id/driving_side"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Right"
+                app:layout_constraintStart_toEndOf="@+id/driving_side_label"
+                app:layout_constraintTop_toTopOf="@+id/driving_side_label"
+                app:layout_constraintBottom_toBottomOf="@id/driving_side_label"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/curved_rectangle_bg"
+        android:backgroundTint="@color/black"
+        android:layout_marginHorizontal="130dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

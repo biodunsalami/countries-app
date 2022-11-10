@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">CountriesApplication</string>
+
+    <string name="population_">Population:</string>
+    <string name="region_">Region:</string>
+    <string name="capital_">Capital:</string>
+    <string name="motto_">Motto:</string>
+    <string name="official_language_">Official language:</string>
+    <string name="ethnic_group_">Ethnic group:</string>
+    <string name="government_">Government:</string>
+    <string name="independence_">Independence:</string>
+    <string name="currency_">Currency:</string>
+    <string name="driving_side_">Driving side:</string>
+    <string name="dialing_code_">Dialing Code:</string>
+    <string name="date_format_">Date format:</string>
+    <string name="time_zone_">Time zone:</string>
+    <string name="gdp_">GDP:</string>
+    <string name="area_">Area:</string>
+    <string name="religion_">Religion:</string>
+    <string name="explore">Explore</string>
+    <string name="search_country">Search Country</string>
+    <string name="languages">Languages</string>
+    <string name="filter">Filter</string>
+    <string name="reset">Reset</string>
+    <string name="show_results">Show results</string>
 </resources>
