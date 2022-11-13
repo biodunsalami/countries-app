@@ -186,61 +186,23 @@ class CountriesFragment : Fragment() {
     }
 
     private fun setLanguage(){
-        languagesBottomSheetBinding.bahasa.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.bh)
-        }
 
+        binding.languageShort.text = getString(R.string.en)
 
-        languagesBottomSheetBinding.deutsch.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.du)
-        }
-
-        languagesBottomSheetBinding.english.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.en)
-        }
-
-        languagesBottomSheetBinding.espanol.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.es)
-        }
-
-
-        languagesBottomSheetBinding.french.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.fr)
-        }
-
-        languagesBottomSheetBinding.italiano.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.it)
-        }
-
-
-        languagesBottomSheetBinding.portugues.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.pg)
-        }
-
-
-        languagesBottomSheetBinding.russian.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.ru)
-        }
-
-        languagesBottomSheetBinding.swedish.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.sw)
-        }
-
-        languagesBottomSheetBinding.turkish.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.tr)
-        }
-
-
-        languagesBottomSheetBinding.chinese.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.ch)
-        }
-
-        languagesBottomSheetBinding.arabic.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.ar)
-        }
-
-        languagesBottomSheetBinding.bengali.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.languageShort.text = getString(R.string.be)
+        languagesBottomSheetBinding.languageRadioGroup.setOnCheckedChangeListener { radioGroup, i ->
+            if (i == R.id.bahasa){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.deutsch){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.english){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.espanol){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.french){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.italiano){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.portugues){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.russian){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.swedish){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.turkish){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.chinese){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.arabic){ binding.languageShort.text = getString(R.string.bh)}
+            if (i == R.id.bengali){ binding.languageShort.text = getString(R.string.bh)}
         }
 
     }
