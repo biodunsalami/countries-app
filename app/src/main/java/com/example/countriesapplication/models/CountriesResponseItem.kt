@@ -1,5 +1,7 @@
 package com.example.countriesapplication.models
 
+import com.example.countriesapplication.MyCountry
+
 
 data class CountriesResponseItem(
     val altSpellings: List<String>? = null,
@@ -37,4 +39,25 @@ data class CountriesResponseItem(
     val tld: List<String>? = null,
     val translations: Translations? = null,
     val unMember: Boolean? = null
-)
+) {
+    val myCountry: MyCountry
+        get() = MyCountry(
+            name?.common,
+            capital,
+            flag,
+            population,
+            languages,
+            independent,
+            area,
+            currencies,
+            timezones,
+            idd?.root,
+            car?.side,
+            flags,
+            coatOfArms,
+            continents,
+            landlocked,
+            unMember,
+            startOfWeek
+        )
+}

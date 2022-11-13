@@ -18,5 +18,11 @@ data class MyCountry(
     val drivingSide: String?,
     val flag: Flags?,
     val coatOfArms: CoatOfArms? = null,
-    val continents: List<String>? = null
-) : Serializable
+    val continents: List<String>? = null,
+    val landlocked: Boolean? = null,
+    val unMember: Boolean? = null,
+    val startOfWeek: String?
+) : Serializable, CountryListItem()
+
+sealed class CountryListItem
+data class CountryHeader(val header: Char) : CountryListItem()

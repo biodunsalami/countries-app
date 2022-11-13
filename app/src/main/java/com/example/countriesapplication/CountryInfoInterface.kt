@@ -1,7 +1,7 @@
 package com.example.countriesapplication
 
-interface CountryInfoInterface {
+interface LanguageInterface {
 
-    fun onCardCountryClicked(position: Int)
+    fun onLanguageClicked(position: Int)
 
 }

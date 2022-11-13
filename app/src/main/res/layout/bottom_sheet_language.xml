@@ -4,16 +4,17 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bottom_sheet_background"
-    android:layout_marginHorizontal="24dp">
+    android:background="@drawable/bottom_sheet_background">
 
     <TextView
         android:id="@+id/languages_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/languages"
         android:textSize="20sp"
+        android:textColor="@color/black_01"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -22,12 +23,16 @@
         android:id="@+id/close_sheet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:focusable="true"
         android:background="@drawable/curved_rectangle_bg"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
+            android:id="@+id/x_button"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_margin="4dp"
@@ -35,14 +40,143 @@
 
     </FrameLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/language_recycler_view"
+    <RadioGroup
+        android:id="@+id/language_radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        tools:listitem="@layout/item_languages_recycler"
-        app:layout_constraintTop_toBottomOf="@id/languages_label"
-        app:layout_constraintStart_toStartOf="@id/languages_label"/>
+        android:orientation="vertical"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/languages_label"
+        app:layout_constraintStart_toStartOf="@id/languages_label"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RadioButton
+            android:id="@+id/bahasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bahasa"
+            android:layout_marginTop="24dp"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+        <RadioButton
+            android:id="@+id/deutsch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deutsch"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+
+        <RadioButton
+            android:id="@+id/english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/english"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+        <RadioButton
+            android:id="@+id/espanol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/espa_ol"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+
+        <RadioButton
+            android:id="@+id/french"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fran_aise"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+        <RadioButton
+            android:id="@+id/italiano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/italiano"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+
+        <RadioButton
+            android:id="@+id/portugues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/portugu_s"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+        <RadioButton
+            android:id="@+id/russian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/russian"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+
+
+        <RadioButton
+            android:id="@+id/swedish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/svenska"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+
+        <RadioButton
+            android:id="@+id/turkish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/t_rk_e"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+        <RadioButton
+            android:id="@+id/chinese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chinese"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+
+        <RadioButton
+            android:id="@+id/arabic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/arabic"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+        <RadioButton
+            android:id="@+id/bengali"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bengali"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+
+
+    </RadioGroup>
 
 
 

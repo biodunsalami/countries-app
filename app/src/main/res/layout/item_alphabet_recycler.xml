@@ -15,14 +15,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/country_info_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        tools:listitem="@layout/item_country_nested_recycler"
-        tools:itemCount="2"
-        app:layout_constraintTop_toBottomOf="@id/alphabet"
-        app:layout_constraintStart_toStartOf="@id/alphabet"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

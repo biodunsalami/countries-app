@@ -115,51 +115,11 @@
                 app:layout_constraintTop_toTopOf="@+id/capital_label"
                 app:layout_constraintBottom_toBottomOf="@id/capital_label"/>
 
-            <TextView
-                android:id="@+id/motto_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/motto_"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/capital_label"
-                app:layout_constraintStart_toStartOf="@+id/capital_label"/>
-
-            <TextView
-                android:id="@+id/motto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                tools:text="Virtus unita fortior"
-                app:layout_constraintStart_toEndOf="@+id/motto_label"
-                app:layout_constraintTop_toTopOf="@+id/motto_label"
-                app:layout_constraintBottom_toBottomOf="@id/motto_label"/>
 
 
 
 
 
-
-
-            <TextView
-                android:id="@+id/official_language_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/official_language_"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/motto_label"
-                app:layout_constraintStart_toStartOf="@+id/motto_label"/>
-
-            <TextView
-                android:id="@+id/official_language"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                tools:text="Catalan"
-                app:layout_constraintStart_toEndOf="@+id/official_language_label"
-                app:layout_constraintTop_toTopOf="@+id/official_language_label"
-                app:layout_constraintBottom_toBottomOf="@id/official_language_label"/>
 
             <TextView
                 android:id="@+id/ethnic_group_label"
@@ -168,8 +128,8 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/ethnic_group_"
                 android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/official_language_label"
-                app:layout_constraintStart_toStartOf="@+id/official_language_label"/>
+                app:layout_constraintTop_toBottomOf="@+id/capital_label"
+                app:layout_constraintStart_toStartOf="@+id/capital_label"/>
 
             <TextView
                 android:id="@+id/ethnic_group"
@@ -181,45 +141,6 @@
                 app:layout_constraintTop_toTopOf="@+id/ethnic_group_label"
                 app:layout_constraintBottom_toBottomOf="@id/ethnic_group_label"/>
 
-            <TextView
-                android:id="@+id/religion_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/religion_"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/ethnic_group_label"
-                app:layout_constraintStart_toStartOf="@+id/ethnic_group_label"/>
-
-            <TextView
-                android:id="@+id/religion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                tools:text="Christianity"
-                app:layout_constraintStart_toEndOf="@+id/religion_label"
-                app:layout_constraintTop_toTopOf="@+id/religion_label"
-                app:layout_constraintBottom_toBottomOf="@id/religion_label"/>
-
-            <TextView
-                android:id="@+id/government_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/government_"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/religion_label"
-                app:layout_constraintStart_toStartOf="@+id/religion_label"/>
-
-            <TextView
-                android:id="@+id/government"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                tools:text="Parliamentary democracy"
-                app:layout_constraintStart_toEndOf="@+id/government_label"
-                app:layout_constraintTop_toTopOf="@+id/government_label"
-                app:layout_constraintBottom_toBottomOf="@id/government_label"/>
 
 
 
@@ -233,8 +154,8 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/independence_"
                 android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/government_label"
-                app:layout_constraintStart_toStartOf="@+id/government_label"/>
+                app:layout_constraintTop_toBottomOf="@+id/ethnic_group_label"
+                app:layout_constraintStart_toStartOf="@+id/ethnic_group_label"/>
 
             <TextView
                 android:id="@+id/independence"
@@ -287,24 +208,24 @@
                 app:layout_constraintBottom_toBottomOf="@id/currency_label"/>
 
             <TextView
-                android:id="@+id/gdp_label"
+                android:id="@+id/land_Locked_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@string/gdp_"
+                android:text="@string/landlocked_"
                 android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@+id/currency_label"
                 app:layout_constraintStart_toStartOf="@+id/currency_label"/>
 
             <TextView
-                android:id="@+id/gdp"
+                android:id="@+id/land_locked"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                tools:text="US$3.400 billion"
-                app:layout_constraintStart_toEndOf="@+id/gdp_label"
-                app:layout_constraintTop_toTopOf="@+id/gdp_label"
-                app:layout_constraintBottom_toBottomOf="@id/gdp_label"/>
+                tools:text="Yes"
+                app:layout_constraintStart_toEndOf="@+id/land_Locked_label"
+                app:layout_constraintTop_toTopOf="@+id/land_Locked_label"
+                app:layout_constraintBottom_toBottomOf="@id/land_Locked_label"/>
 
 
 
@@ -319,8 +240,8 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/time_zone_"
                 android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/gdp_label"
-                app:layout_constraintStart_toStartOf="@+id/gdp_label"/>
+                app:layout_constraintTop_toBottomOf="@+id/land_Locked_label"
+                app:layout_constraintStart_toStartOf="@+id/land_Locked_label"/>
 
             <TextView
                 android:id="@+id/time_zone"
@@ -332,25 +253,6 @@
                 app:layout_constraintTop_toTopOf="@+id/time_zone_label"
                 app:layout_constraintBottom_toBottomOf="@id/time_zone_label"/>
 
-            <TextView
-                android:id="@+id/date_format_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/date_format_"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/time_zone_label"
-                app:layout_constraintStart_toStartOf="@+id/time_zone_label"/>
-
-            <TextView
-                android:id="@+id/date_format"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                tools:text="dd/mm/yy"
-                app:layout_constraintStart_toEndOf="@+id/date_format_label"
-                app:layout_constraintTop_toTopOf="@+id/date_format_label"
-                app:layout_constraintBottom_toBottomOf="@id/date_format_label"/>
 
             <TextView
                 android:id="@+id/dialling_code_label"
@@ -359,8 +261,8 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/dialing_code_"
                 android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/date_format_label"
-                app:layout_constraintStart_toStartOf="@+id/date_format_label"/>
+                app:layout_constraintTop_toBottomOf="@+id/time_zone_label"
+                app:layout_constraintStart_toStartOf="@+id/time_zone_label"/>
 
             <TextView
                 android:id="@+id/dialling_code"
@@ -391,6 +293,50 @@
                 app:layout_constraintStart_toEndOf="@+id/driving_side_label"
                 app:layout_constraintTop_toTopOf="@+id/driving_side_label"
                 app:layout_constraintBottom_toBottomOf="@id/driving_side_label"/>
+
+
+
+            <TextView
+                android:id="@+id/un_member_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/un_member_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/driving_side_label"
+                app:layout_constraintStart_toStartOf="@+id/driving_side_label"/>
+
+            <TextView
+                android:id="@+id/un_member"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Yes"
+                app:layout_constraintStart_toEndOf="@+id/un_member_label"
+                app:layout_constraintTop_toTopOf="@+id/un_member_label"
+                app:layout_constraintBottom_toBottomOf="@id/un_member_label"/>
+
+
+            <TextView
+                android:id="@+id/start_of_week_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/start_of_week_"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/un_member_label"
+                app:layout_constraintStart_toStartOf="@+id/un_member_label"/>
+
+            <TextView
+                android:id="@+id/start_of_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="Sunday"
+                app:layout_constraintStart_toEndOf="@+id/start_of_week_label"
+                app:layout_constraintTop_toTopOf="@+id/start_of_week_label"
+                app:layout_constraintBottom_toBottomOf="@id/start_of_week_label"/>
+
 
 
 

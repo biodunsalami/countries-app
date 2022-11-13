@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginHorizontal="24dp">
+    android:background="@drawable/bottom_sheet_background">
 
 
     <TextView
         android:id="@+id/filter_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/filter"
         android:textSize="20sp"
@@ -21,6 +22,7 @@
         android:id="@+id/close_sheet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/curved_rectangle_bg"
         app:layout_constraintTop_toTopOf="parent"
@@ -38,6 +40,7 @@
         android:id="@+id/filter_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@+id/filter_label"
         app:layout_constraintStart_toStartOf="@id/filter_label"/>
@@ -67,7 +70,7 @@
         android:background="@drawable/curved_rectangle_bg"
         app:layout_constraintTop_toTopOf="@+id/reset_button"
         app:layout_constraintBottom_toBottomOf="@id/reset_button"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/filter_recycler_view"
         app:layout_constraintStart_toEndOf="@+id/reset_button"/>
 
 

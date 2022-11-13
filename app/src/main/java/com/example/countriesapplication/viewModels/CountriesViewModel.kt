@@ -1,47 +1,41 @@
 package com.example.countriesapplication.viewModels
 
+import android.util.Log
 import androidx.lifecycle.*
-import com.example.countriesapplication.MyCountry
-import com.example.countriesapplication.Repository
+import com.example.countriesapplication.*
 import kotlinx.coroutines.launch
 
-class CountriesViewModel(private val repository: Repository): ViewModel() {
+class CountriesViewModel(private val repository: Repository) : ViewModel() {
 
-    private val _myResponse: MutableLiveData<List<MyCountry>> by lazy {
+    private val _myResponse: MutableLiveData<List<CountryListItem>> by lazy {
         MutableLiveData(null)
     }
-    val myResponse: LiveData<List<MyCountry>>
+    val myResponse: LiveData<List<CountryListItem>>
         get() = _myResponse
 
 
-    var normalList = ArrayList<MyCountry>()
-
-
-    fun getCountry(){
+    fun getCountry() {
         viewModelScope.launch {
             try {
-                val response = repository.getCountries()
+                val response = insertHeaders(repository.getCountries())
+                Log.e("Timber", response.toString())
                 _myResponse.value = response
-                normalList = response
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 //Handle it
             }
         }
     }
 
-    fun getFilteredByAlphabets(): List<MyCountry>?{
-//        return _myResponse.value?.filter { country -> country.name?.get(0) == 'A' }
-        getCountry()
-        return normalList.filter { country -> country.name?.get(0) == 'A' }
+    private fun insertHeaders(response: List<MyCountry>): List<CountryListItem> {
+        val map: Map<Char, List<MyCountry>> = response.groupBy { it.name?.first() ?: ' ' }
+        val result = mutableListOf<CountryListItem>()
+
+        Data.alphabets.forEach { alphabet ->
+            result.add(CountryHeader(alphabet))
+            result.addAll(map[alphabet].orEmpty())
+        }
+        return result
     }
-
-
-
-
-//    suspend fun getCountries(): List<MyCountry>{
-//        return repository.getCountries()
-//    }
-
 
 
 }

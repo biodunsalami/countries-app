@@ -30,5 +30,4 @@ object Data {
         'Y',
         'Z'
     )
-
 }

@@ -24,9 +24,12 @@ class BaseRecyclerAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
 
 
     var expressionViewHolderBinding: ((T, ViewBinding) -> Unit)? = null
-    var expressionOnCreateViewHolder: ((ViewGroup) -> ViewBinding)? = null
+    var expressionOnCreateViewHolder: ((ViewGroup, Int) -> ViewBinding)? = null
+    lateinit var expressionOnGetItemViewType: (item: T?) -> Int
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<T> {
-        return expressionOnCreateViewHolder?.let { it(parent) }
+
+        return expressionOnCreateViewHolder?.let { it(parent, viewType) }
             ?.let { BaseViewHolder(it, expressionViewHolderBinding!!) }!!
     }
 
@@ -36,5 +39,9 @@ class BaseRecyclerAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
 
     override fun getItemCount(): Int {
         return listOfItems?.size ?: 0
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return expressionOnGetItemViewType.invoke(listOfItems?.get(position))
     }
 }
