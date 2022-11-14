@@ -42,20 +42,95 @@
                 app:layout_constraintEnd_toEndOf="parent"/>
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/top_constraint"
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginTop="25dp"
-                android:background="@color/cardview_dark_background"
+                android:layout_marginTop="16dp"
                 app:layout_constraintTop_toBottomOf="@+id/back_arrow"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/arrows_left_right"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/view_pager"
+                app:layout_constraintStart_toStartOf="@+id/view_pager"
+                app:layout_constraintBottom_toBottomOf="@id/view_pager"
+                app:layout_constraintEnd_toEndOf="@+id/view_pager">
+
+                <FrameLayout
+                    android:id="@+id/arrow_left_frame"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:cardCornerRadius="48dp"
+                    android:background="@drawable/circular_bg"
+                    android:alpha="0.3"
+                    android:layout_marginHorizontal="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arrow_left"
+                    app:layout_constraintTop_toTopOf="@id/arrow_left_frame"
+                    app:layout_constraintBottom_toBottomOf="@+id/arrow_left_frame"
+                    app:layout_constraintStart_toStartOf="@+id/arrow_left_frame"
+                    app:layout_constraintEnd_toEndOf="@id/arrow_left_frame"/>
 
 
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrow_right_frame"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:cardCornerRadius="48dp"
+                    android:background="@color/gray_01"
+                    android:alpha="0.3"
+                    android:layout_marginHorizontal="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arror_right"
+                    app:layout_constraintTop_toTopOf="@+id/arrow_right_frame"
+                    app:layout_constraintBottom_toBottomOf="@+id/arrow_right_frame"
+                    app:layout_constraintStart_toStartOf="@+id/arrow_right_frame"
+                    app:layout_constraintEnd_toEndOf="@id/arrow_right_frame"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="16dp"
+                app:ci_width="5dp"
+                app:ci_height="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/view_pager"
+                app:layout_constraintStart_toStartOf="@+id/view_pager"
+                app:layout_constraintEnd_toEndOf="@+id/view_pager"/>
+
+
+
+
 
             <TextView
                 android:id="@+id/population_label"
@@ -65,8 +140,8 @@
                 android:text="@string/population_"
                 android:textSize="16sp"
                 android:fontFamily="@font/axiforma_medium"
-                app:layout_constraintTop_toBottomOf="@+id/top_constraint"
-                app:layout_constraintStart_toStartOf="@+id/top_constraint"/>
+                app:layout_constraintTop_toBottomOf="@+id/view_pager"
+                app:layout_constraintStart_toStartOf="@+id/view_pager"/>
 
             <TextView
                 android:id="@+id/population"

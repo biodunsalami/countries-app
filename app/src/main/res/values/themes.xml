@@ -34,5 +34,9 @@
     <style name="RoundedSquare">
         <item name="cornerSize">10%</item>
     </style>
+
+    <style name="RoundedSquare2">
+        <item name="cornerSize">5%</item>
+    </style>
     
 </resources>

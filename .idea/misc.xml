@@ -19,7 +19,7 @@
         <entry key="app/src/main/res/layout/bottom_sheet_filter.xml" value="0.25" />
         <entry key="app/src/main/res/layout/bottom_sheet_language.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/filter_bottom_sheet.xml" value="0.396875" />
-        <entry key="app/src/main/res/layout/fragment_countries.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_countries.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_country_details.xml" value="0.29359222412109376" />
         <entry key="app/src/main/res/layout/item_alphabet_recycler.xml" value="0.20885416666666667" />
         <entry key="app/src/main/res/layout/item_country_alphabet_parent_recycler.xml" value="0.335" />
@@ -29,6 +29,7 @@
         <entry key="app/src/main/res/layout/item_filter_nested_recycler.xml" value="0.26692810058593747" />
         <entry key="app/src/main/res/layout/item_filter_parent_recycler.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_filter_recycler.xml" value="0.25339965820312493" />
+        <entry key="app/src/main/res/layout/item_image_recycler.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_languages_recycler.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_nested_recycler.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/language_bottom_sheet.xml" value="0.335" />

@@ -11,6 +11,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager2.widget.ViewPager2
 import coil.load
 import com.example.countriesapplication.*
 import com.example.countriesapplication.adapter.BaseRecyclerAdapter
@@ -29,6 +30,7 @@ class CountriesFragment : Fragment() {
     private val repository = Repository(Api.apiService)
 
     lateinit var viewModel: CountriesViewModel
+
 
     lateinit var languagesBottomSheetBinding: BottomSheetLanguageBinding
     lateinit var languagesBottomSheetDialog: BottomSheetDialog
@@ -111,10 +113,54 @@ class CountriesFragment : Fragment() {
                 return@observe
             }
 
-        setUpCountriesRv(it)
+            tempList.addAll(it)
+
+            setUpCountriesRv(tempList)
+
+
+            binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    binding.searchTextView.visibility = View.VISIBLE
+
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+
+                    binding.searchTextView.visibility = View.INVISIBLE
+
+                    tempList.clear()
+                    val searchText = newText!!.lowercase(Locale.getDefault())
+
+
+
+                    for (item in it) {
+                        when (item) {
+                            is MyCountry -> {
+
+                                if (item.name?.contains(searchText) == true) {
+                                    tempList.add(item)
+                                }
+                            }
+                            is CountryHeader -> {}
+                        }
+
+                    }
+                    return false
+                }
+            })
+
+            Log.e("FILTER_LIST", "$it")
 
 
         }
+
+    }
+
+    private fun performSearch(list: List<CountryListItem>) {
+
+        Log.e("call", "E call am o")
+
 
     }
 
@@ -180,6 +226,7 @@ class CountriesFragment : Fragment() {
             adapter = aAdapter
         }
 
+        aAdapter.notifyDataSetChanged()
     }
 
     private fun setUpFilterCategoriesRv() {

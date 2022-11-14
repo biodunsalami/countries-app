@@ -5,13 +5,14 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:paddingBottom="26dp"
+    android:paddingBottom="16dp"
     android:id="@+id/country_info">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/country_flag"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:scaleType="centerCrop"
         android:background="@drawable/curved_rectangle_bg"
         android:clipToOutline="true"
         app:shapeAppearance="@style/RoundedSquare"
@@ -27,7 +28,6 @@
         android:layout_marginStart="16dp"
         tools:text="Afghanistan"
         android:textSize="14sp"
-        android:layout_marginBottom="2dp"
         android:fontFamily="@font/axiforma_medium"
         app:layout_constraintTop_toTopOf="@+id/country_flag"
         app:layout_constraintStart_toEndOf="@+id/country_flag"
@@ -38,10 +38,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="2dp"
         tools:text="Kabul"
         android:textSize="14sp"
-        android:fontFamily="@font/axiforma_regular"
+        android:fontFamily="@font/axiforma_light"
         app:layout_constraintBottom_toBottomOf="@+id/country_flag"
         app:layout_constraintStart_toEndOf="@+id/country_flag"
         app:layout_constraintTop_toBottomOf="@+id/country_name"/>

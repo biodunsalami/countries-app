@@ -50,6 +50,8 @@ dependencies {
     def navVersion = "2.5.3"
     def lifecycle_version = "2.5.0"
 
+    implementation 'com.mikhaellopez:circularimageview:4.3.1'
+
 
     //Navigation Component dependency
     implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
@@ -73,5 +75,8 @@ dependencies {
 
     //Http logging
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+    //Image slider
+    implementation 'me.relex:circleindicator:2.1.6'
 
 }
