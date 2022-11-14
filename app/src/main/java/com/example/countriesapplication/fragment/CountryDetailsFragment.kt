@@ -77,7 +77,7 @@ class CountryDetailsFragment : Fragment() {
 
 
 
-
+        //image slider setup
         val viewPagerAdapter = BaseRecyclerAdapter<String?>()
 
         val images = arrayListOf(args.selectedCountry.flag?.png, args.selectedCountry.coatOfArms?.png)

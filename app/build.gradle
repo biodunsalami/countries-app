@@ -76,7 +76,7 @@ dependencies {
     //Http logging
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
 
-    //Image slider
+    //Image slider indicator
     implementation 'me.relex:circleindicator:2.1.6'
 
 }

@@ -11,7 +11,6 @@ import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager2.widget.ViewPager2
 import coil.load
 import com.example.countriesapplication.*
 import com.example.countriesapplication.adapter.BaseRecyclerAdapter
@@ -117,24 +116,30 @@ class CountriesFragment : Fragment() {
 
             setUpCountriesRv(tempList)
 
+            performSearch(it)
+        }
+    }
 
-            binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    binding.searchTextView.visibility = View.VISIBLE
+    private fun performSearch(list: List<CountryListItem>) {
 
-                    return false
-                }
-
-                override fun onQueryTextChange(newText: String?): Boolean {
-
-                    binding.searchTextView.visibility = View.INVISIBLE
-
-                    tempList.clear()
-                    val searchText = newText!!.lowercase(Locale.getDefault())
+        Log.e("call", "E call am o")
 
 
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
 
-                    for (item in it) {
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                binding.searchTextView.visibility = View.INVISIBLE
+
+                tempList.clear()
+                val searchText = newText!!.lowercase(Locale.getDefault())
+
+                if (searchText.isNotEmpty()){
+
+                    for (item in list) {
                         when (item) {
                             is MyCountry -> {
 
@@ -146,23 +151,108 @@ class CountriesFragment : Fragment() {
                         }
 
                     }
-                    return false
-                }
-            })
 
-            Log.e("FILTER_LIST", "$it")
+                }else{
+                    tempList.clear()
+                    tempList.addAll(list)
+                    setUpCountriesRv(tempList)
+                    binding.searchTextView.visibility = View.VISIBLE
+
+                }
+
+
+
+                return false
+            }
+        })
+
+        Log.e("FILTER_LIST", "$list")
+
+
+    }
+
+    private fun setUpFilterCategoriesRv() {
+
+        val nestedAdapter = BaseRecyclerAdapter<FilterModel.Member>()
+
+//        val list = arrayListOf<FilterModel.Member>(Data.timeZones )
+
+        nestedAdapter.expressionOnGetItemViewType = { _ -> 0 }
+
+        nestedAdapter.expressionViewHolderBinding = { item, viewBinding ->
+            val binding = viewBinding as ItemFilterNestedRecyclerBinding
+
+            binding.filterItemText.text = item.title
 
 
         }
 
+        nestedAdapter.expressionOnCreateViewHolder = { viewGroup, viewType ->
+            ItemFilterNestedRecyclerBinding.inflate(
+                LayoutInflater.from(viewGroup.context),
+                viewGroup,
+                false
+            )
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        val filterAdapter = BaseRecyclerAdapter<FilterModel>()
+
+        filterAdapter.listOfItems = Data.allModels
+
+        filterAdapter.expressionOnGetItemViewType = { _ -> 0 }
+
+        filterAdapter.expressionViewHolderBinding = { item, viewBinding ->
+            val binding = viewBinding as ItemFilterParentRecyclerBinding
+
+            binding.filterItemText.text = item.filterCategoryTitle
+
+            binding.nestedRv.apply {
+                nestedAdapter.listOfItems = Data.continent
+
+                layoutManager = LinearLayoutManager(context)
+                adapter = nestedAdapter
+                isNestedScrollingEnabled = false
+            }
+        }
+
+        filterAdapter.expressionOnCreateViewHolder = { viewGroup, viewType ->
+            ItemFilterParentRecyclerBinding.inflate(
+                LayoutInflater.from(viewGroup.context),
+                viewGroup,
+                false
+            )
+        }
+
+        filterBottomSheetBinding.filterRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = filterAdapter
+            isNestedScrollingEnabled = false
+
+        }
+
+        filterBottomSheetBinding.filterRecyclerView
+
+
+
+
+
+
     }
 
-    private fun performSearch(list: List<CountryListItem>) {
 
-        Log.e("call", "E call am o")
-
-
-    }
 
 
     private fun setUpCountriesRv(list: List<CountryListItem>) {
@@ -229,72 +319,7 @@ class CountriesFragment : Fragment() {
         aAdapter.notifyDataSetChanged()
     }
 
-    private fun setUpFilterCategoriesRv() {
-        val filterAdapter = BaseRecyclerAdapter<FilterModel>()
 
-
-        filterAdapter.listOfItems = Data.nestedList
-
-        filterAdapter.expressionOnGetItemViewType = { _ -> 0 }
-
-        filterAdapter.expressionViewHolderBinding = { item, viewBinding ->
-            val binding = viewBinding as ItemFilterParentRecyclerBinding
-
-            binding.filterItemText.text = item.filterCategoryTitle
-        }
-
-        filterAdapter.expressionOnCreateViewHolder = { viewGroup, viewType ->
-            ItemFilterParentRecyclerBinding.inflate(
-                LayoutInflater.from(viewGroup.context),
-                viewGroup,
-                false
-            )
-        }
-
-        filterBottomSheetBinding.filterRecyclerView.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = filterAdapter
-            isNestedScrollingEnabled = false
-
-        }
-
-        filterBottomSheetBinding.filterRecyclerView
-
-
-        val nestedAdapter = BaseRecyclerAdapter<FilterModel>()
-
-
-        nestedAdapter.listOfItems = Data.nestedList
-
-        nestedAdapter.expressionOnGetItemViewType = { _ -> 0 }
-
-        nestedAdapter.expressionViewHolderBinding = { item, viewBinding ->
-            val binding = viewBinding as ItemFilterNestedRecyclerBinding
-
-            binding.filterItemText.text = item.nestedList[0]
-
-//            binding.
-
-
-        }
-
-        nestedAdapter.expressionOnCreateViewHolder = { viewGroup, viewType ->
-            ItemFilterNestedRecyclerBinding.inflate(
-                LayoutInflater.from(viewGroup.context),
-                viewGroup,
-                false
-            )
-        }
-
-//        filterBottomSheetBinding.filterRecyclerView.apply {
-//            layoutManager = LinearLayoutManager(context)
-//            adapter = filterAdapter
-//            isNestedScrollingEnabled = false
-//
-//        }
-
-
-    }
 
 
     private fun languagesBottomSheetDialog() {

@@ -34,21 +34,49 @@ object Data {
     val filterCategories = arrayListOf("Continent", "Timezones")
 
     val continents = arrayListOf(
-        "Africa",
-        "Antarctica",
-        "Asia",
-        "Australia",
-        "Europe",
-        "North America",
-        "South America"
+        FilterModel.Member("Africa", null),
+        FilterModel.Member("Antarctica", null),
+        FilterModel.Member("Asia", null),
+        FilterModel.Member("Australia", null),
+        FilterModel.Member("Europe", null),
+        FilterModel.Member("North America", null),
+        FilterModel.Member("South America", null)
     )
 
-    val timeZones = arrayListOf("GMT+1:00", "GMT+2:00", "GMT+3:00", "GMT+4:00", "GMT+5:00")
-
-    val nestedList = arrayListOf(
-        FilterModel("Continent", continents),
-        FilterModel("Timezones", timeZones)
+    val timeZones = arrayListOf(
+        FilterModel.Member("GMT+1:00", null),
+        FilterModel.Member("GMT+2:00", null),
+        FilterModel.Member("GMT+3:00", null),
+        FilterModel.Member("GMT+4:00", null),
+        FilterModel.Member("GMT+5:00", null)
     )
 
+    val continent = ArrayList<FilterModel.Member>()
+    val timeZone = ArrayList<FilterModel.Member>()
+
+
+    val allModels = arrayListOf(
+        FilterModel("Region", continent),
+        FilterModel("TimeZone", timeZones)
+    )
+
+    init {
+        continent.add(FilterModel.Member("Africa", null))
+        continent.add(FilterModel.Member("Antarctica", null))
+        continent.add(FilterModel.Member("Asia", null))
+        continent.add(FilterModel.Member("Europe", null))
+        continent.add(FilterModel.Member("North America", null))
+        continent.add(FilterModel.Member("South America", null))
+
+        timeZone.add(FilterModel.Member("GMT+1:00", null))
+        timeZone.add(FilterModel.Member("GMT+2:00", null))
+        timeZone.add(FilterModel.Member("GMT+3:00", null))
+        timeZone.add(FilterModel.Member("GMT+4:00", null))
+        timeZone.add(FilterModel.Member("GMT+5:00", null))
+
+
+        val model = FilterModel("Region", continent)
+        val model2 = FilterModel("TimeZone", continent)
+    }
 
 }
