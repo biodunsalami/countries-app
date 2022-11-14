@@ -14,7 +14,7 @@
         android:layout_marginTop="24dp"
         android:text="@string/languages"
         android:textSize="20sp"
-        android:textColor="@color/black_01"
+        android:fontFamily="@font/axiforma_semibold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -45,6 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="16dp"
         android:layout_marginHorizontal="24dp"
         app:layout_constraintTop_toBottomOf="@+id/languages_label"
         app:layout_constraintStart_toStartOf="@id/languages_label"

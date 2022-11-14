@@ -39,10 +39,12 @@ class CountryDetailsFragment : Fragment() {
             findNavController().navigateUp()
         }
 
+
         binding.countryName.text = args.selectedCountry.name
         binding.population.text = args.selectedCountry.population.toString()
         binding.region.text = args.selectedCountry.continents?.get(0) ?: ""
         binding.capital.text = args.selectedCountry.capital?.get(0) ?: ""
+
 
 //        binding.officialLanguage.text = args.selectedCountry.officialLanguage.
         binding.ethnicGroup.visibility = View.INVISIBLE

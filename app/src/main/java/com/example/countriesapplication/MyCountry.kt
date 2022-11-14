@@ -24,5 +24,6 @@ data class MyCountry(
     val startOfWeek: String?
 ) : Serializable, CountryListItem()
 
+
 sealed class CountryListItem
 data class CountryHeader(val header: Char) : CountryListItem()

@@ -8,14 +8,17 @@
     android:paddingBottom="26dp"
     android:id="@+id/country_info">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/country_flag"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/curved_rectangle_bg"
         android:clipToOutline="true"
+        app:shapeAppearance="@style/RoundedSquare"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
 
     <TextView
         android:id="@+id/country_name"
@@ -23,9 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         tools:text="Afghanistan"
-        android:textColor="@color/dark_blue"
         android:textSize="14sp"
         android:layout_marginBottom="2dp"
+        android:fontFamily="@font/axiforma_medium"
         app:layout_constraintTop_toTopOf="@+id/country_flag"
         app:layout_constraintStart_toEndOf="@+id/country_flag"
         app:layout_constraintBottom_toTopOf="@+id/country_capital"/>
@@ -37,8 +40,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         tools:text="Kabul"
-        android:textColor="@color/dark_blue"
         android:textSize="14sp"
+        android:fontFamily="@font/axiforma_regular"
         app:layout_constraintBottom_toBottomOf="@+id/country_flag"
         app:layout_constraintStart_toEndOf="@+id/country_flag"
         app:layout_constraintTop_toBottomOf="@+id/country_name"/>

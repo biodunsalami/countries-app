@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="24dp">
 
     <TextView
-        android:id="@+id/filter_text"
+        android:id="@+id/filter_item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Africa"
-        android:textSize="20sp"
+        tools:text="Continent"
+        android:textSize="16sp"
+        android:fontFamily="@font/axiforma_medium"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -20,10 +22,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic__arrow_down"
-        app:layout_constraintTop_toTopOf="@+id/filter_text"
-        app:layout_constraintBottom_toBottomOf="@+id/filter_text"
+        app:layout_constraintTop_toTopOf="@+id/filter_item_text"
+        app:layout_constraintBottom_toBottomOf="@+id/filter_item_text"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/nestedRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/item_filter_nested_recycler"
+        app:layout_constraintTop_toBottomOf="@id/filter_item_text"
+        app:layout_constraintStart_toStartOf="@+id/filter_item_text"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         tools:text="Languages"
         android:textSize="20sp"
+        android:fontFamily="@font/axiforma_light"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="A"
-        android:textColor="@color/dark_blue"
         android:textSize="14sp"
+        android:fontFamily="@font/axiforma_medium"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

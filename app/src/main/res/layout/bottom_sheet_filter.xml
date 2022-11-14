@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bottom_sheet_background">
 
 
@@ -14,6 +16,7 @@
         android:layout_marginTop="24dp"
         android:text="@string/filter"
         android:textSize="20sp"
+        android:fontFamily="@font/axiforma_semibold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -41,37 +44,57 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
+        tools:listitem="@layout/item_filter_parent_recycler"
+        tools:itemCount="2"
         app:layout_constraintTop_toBottomOf="@+id/filter_label"
         app:layout_constraintStart_toStartOf="@id/filter_label"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/reset_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/reset"
-        android:textAllCaps="false"
-        app:cornerRadius="4dp"
-        android:textSize="16sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/white_button_bg"
-        app:layout_constraintTop_toBottomOf="@+id/filter_recycler_view"
-        app:layout_constraintStart_toStartOf="@id/filter_recycler_view"
-        app:layout_constraintEnd_toStartOf="@+id/show_result_button"/>
 
-    <Button
-        android:id="@+id/show_result_button"
-        android:layout_width="0dp"
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="gone"
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/show_results"
-        android:textAllCaps="false"
-        android:background="@drawable/curved_rectangle_bg"
-        app:layout_constraintTop_toTopOf="@+id/reset_button"
-        app:layout_constraintBottom_toBottomOf="@id/reset_button"
-        app:layout_constraintEnd_toEndOf="@+id/filter_recycler_view"
-        app:layout_constraintStart_toEndOf="@+id/reset_button"/>
+        android:layout_marginHorizontal="24dp"
+        android:paddingBottom="36dp"
+        app:layout_constraintTop_toBottomOf="@+id/filter_recycler_view"
+        app:layout_constraintStart_toStartOf="@+id/filter_recycler_view"
+        app:layout_constraintEnd_toEndOf="@+id/filter_recycler_view">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/reset"
+            android:textAllCaps="false"
+            app:cornerRadius="4dp"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/white_button_bg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/show_result_button"/>
+
+        <Button
+            android:id="@+id/show_result_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/show_results"
+            android:textAllCaps="false"
+            android:background="@drawable/curved_rectangle_bg"
+            app:layout_constraintTop_toTopOf="@+id/reset_button"
+            app:layout_constraintBottom_toBottomOf="@id/reset_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/reset_button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

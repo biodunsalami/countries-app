@@ -24,6 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:src="@drawable/ic_back"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 />
@@ -35,6 +36,7 @@
                 android:layout_marginTop="24dp"
                 tools:text="Andorra"
                 android:textSize="20sp"
+                android:fontFamily="@font/axiforma_semibold"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -62,6 +64,7 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/population_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/top_constraint"
                 app:layout_constraintStart_toStartOf="@+id/top_constraint"/>
 
@@ -71,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="77,289"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/population_label"
                 app:layout_constraintTop_toTopOf="@+id/population_label"
                 app:layout_constraintBottom_toBottomOf="@id/population_label"/>
@@ -82,6 +86,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/region_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/population_label"
                 app:layout_constraintStart_toStartOf="@+id/population_label"/>
 
@@ -91,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="Europe"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/region_label"
                 app:layout_constraintTop_toTopOf="@+id/region_label"
                 app:layout_constraintBottom_toBottomOf="@id/region_label"/>
@@ -102,6 +108,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/capital_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/region_label"
                 app:layout_constraintStart_toStartOf="@+id/region_label"/>
 
@@ -111,6 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="Andora la Vella"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/capital_label"
                 app:layout_constraintTop_toTopOf="@+id/capital_label"
                 app:layout_constraintBottom_toBottomOf="@id/capital_label"/>
@@ -128,6 +136,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/ethnic_group_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/capital_label"
                 app:layout_constraintStart_toStartOf="@+id/capital_label"/>
 
@@ -137,6 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="Andorran, Spanish, Portuguese"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/ethnic_group_label"
                 app:layout_constraintTop_toTopOf="@+id/ethnic_group_label"
                 app:layout_constraintBottom_toBottomOf="@id/ethnic_group_label"/>
@@ -154,6 +164,7 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/independence_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/ethnic_group_label"
                 app:layout_constraintStart_toStartOf="@+id/ethnic_group_label"/>
 
@@ -163,6 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="8th September, 1278"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/independence_label"
                 app:layout_constraintTop_toTopOf="@+id/independence_label"
                 app:layout_constraintBottom_toBottomOf="@id/independence_label"/>
@@ -174,6 +186,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/area_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/independence_label"
                 app:layout_constraintStart_toStartOf="@+id/independence_label"/>
 
@@ -183,6 +196,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="467.63 km2"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/area_label"
                 app:layout_constraintTop_toTopOf="@+id/area_label"
                 app:layout_constraintBottom_toBottomOf="@id/area_label"/>
@@ -194,6 +208,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/currency_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/area_label"
                 app:layout_constraintStart_toStartOf="@+id/area_label"/>
 
@@ -203,6 +218,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="Euro"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/currency_label"
                 app:layout_constraintTop_toTopOf="@+id/currency_label"
                 app:layout_constraintBottom_toBottomOf="@id/currency_label"/>
@@ -214,6 +230,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/landlocked_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/currency_label"
                 app:layout_constraintStart_toStartOf="@+id/currency_label"/>
 
@@ -223,6 +240,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="Yes"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/land_Locked_label"
                 app:layout_constraintTop_toTopOf="@+id/land_Locked_label"
                 app:layout_constraintBottom_toBottomOf="@id/land_Locked_label"/>
@@ -240,6 +258,7 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/time_zone_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/land_Locked_label"
                 app:layout_constraintStart_toStartOf="@+id/land_Locked_label"/>
 
@@ -249,6 +268,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="UTC+01"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/time_zone_label"
                 app:layout_constraintTop_toTopOf="@+id/time_zone_label"
                 app:layout_constraintBottom_toBottomOf="@id/time_zone_label"/>
@@ -261,6 +281,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/dialing_code_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/time_zone_label"
                 app:layout_constraintStart_toStartOf="@+id/time_zone_label"/>
 
@@ -281,6 +302,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/driving_side_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/dialling_code_label"
                 app:layout_constraintStart_toStartOf="@+id/dialling_code_label"/>
 
@@ -290,6 +312,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="Right"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/driving_side_label"
                 app:layout_constraintTop_toTopOf="@+id/driving_side_label"
                 app:layout_constraintBottom_toBottomOf="@id/driving_side_label"/>
@@ -303,6 +326,7 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/un_member_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/driving_side_label"
                 app:layout_constraintStart_toStartOf="@+id/driving_side_label"/>
 
@@ -312,6 +336,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="Yes"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/un_member_label"
                 app:layout_constraintTop_toTopOf="@+id/un_member_label"
                 app:layout_constraintBottom_toBottomOf="@id/un_member_label"/>
@@ -324,6 +349,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/start_of_week_"
                 android:textSize="16sp"
+                android:fontFamily="@font/axiforma_medium"
                 app:layout_constraintTop_toBottomOf="@+id/un_member_label"
                 app:layout_constraintStart_toStartOf="@+id/un_member_label"/>
 
@@ -333,6 +359,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 tools:text="Sunday"
+                android:fontFamily="@font/axiforma_light"
                 app:layout_constraintStart_toEndOf="@+id/start_of_week_label"
                 app:layout_constraintTop_toTopOf="@+id/start_of_week_label"
                 app:layout_constraintBottom_toBottomOf="@id/start_of_week_label"/>
