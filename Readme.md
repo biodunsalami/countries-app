@@ -17,8 +17,10 @@ Clicking on a country on the list navigates user to a details screen where user 
 ### App Structure
 The current structure is the codebase is quite simplistic in approach, yet open ended for the addition of more feature.  
 **Models** - models consist of data classes that holds required fields   
+**Api** - api consists of the api service interface   
 **Adapter** - contains a base Recycler Adapter to bind various datasets to the different Recycler Views   
 **Data** - consists of a Data object that is used as the data source
+**ViewModel** - consists of the viewModel and ViewModelFactory classes
 **Presentation** - the app uses a single activity with multiple fragments approach; all of which are contained in the Presentation package
 
 
