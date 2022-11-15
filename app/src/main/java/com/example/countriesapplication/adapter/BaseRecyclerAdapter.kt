@@ -22,7 +22,7 @@ class BaseRecyclerAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>(), Filter
     var listOfItems: List<T>? = mutableListOf()
         set(value) {
             field = value
-            notifyDataSetChanged()
+//            notifyDataSetChanged()
         }
 
     val listOfItemsFiltered: MutableList<T> = mutableListOf()

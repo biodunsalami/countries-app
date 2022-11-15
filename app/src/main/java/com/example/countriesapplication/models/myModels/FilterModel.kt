@@ -1,4 +1,4 @@
-package com.example.countriesapplication
+package com.example.countriesapplication.models.myModels
 
 data class FilterModel(
     val filterCategoryTitle: String,

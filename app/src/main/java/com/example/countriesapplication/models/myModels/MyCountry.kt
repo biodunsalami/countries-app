@@ -1,6 +1,5 @@
-package com.example.countriesapplication.myModels
+package com.example.countriesapplication.models.myModels
 
-import com.example.countriesapplication.remote.*
 import java.io.Serializable
 
 
@@ -9,15 +8,15 @@ data class MyCountry(
     val capital: List<String>?,
     val logo: String,
     val population: Int,
-    val officialLanguage: Languages? = null,
+    val officialLanguage: com.example.countriesapplication.models.remote.Languages? = null,
     val independent: Boolean? = null,
     val area: Double,
-    val currency: Currencies? = null,
+    val currency: com.example.countriesapplication.models.remote.Currencies? = null,
     val timeZone: List<String>?,
     val diallingCode: String?,
     val drivingSide: String?,
-    val flag: Flags?,
-    val coatOfArms: CoatOfArms? = null,
+    val flag: com.example.countriesapplication.models.remote.Flags?,
+    val coatOfArms: com.example.countriesapplication.models.remote.CoatOfArms? = null,
     val continents: List<String>? = null,
     val landlocked: Boolean? = null,
     val unMember: Boolean? = null,

@@ -1,4 +1,6 @@
-package com.example.countriesapplication
+package com.example.countriesapplication.Data
+
+import com.example.countriesapplication.models.myModels.FilterModel
 
 object Data {
 
@@ -83,22 +85,5 @@ object Data {
         FilterModel("TimeZone", timeZones)
     )
 
-//    val insideList = arrayListOf(continent, timeZones)
-
-//    init {
-//        continent.add(FilterModel.Member("Africa", null))
-//        continent.add(FilterModel.Member("Antarctica", null))
-//        continent.add(FilterModel.Member("Asia", null))
-//        continent.add(FilterModel.Member("Europe", null))
-//        continent.add(FilterModel.Member("North America", null))
-//        continent.add(FilterModel.Member("South America", null))
-//
-//        timeZone.add(FilterModel.Member("GMT+1:00", null))
-//        timeZone.add(FilterModel.Member("GMT+2:00", null))
-//        timeZone.add(FilterModel.Member("GMT+3:00", null))
-//        timeZone.add(FilterModel.Member("GMT+4:00", null))
-//        timeZone.add(FilterModel.Member("GMT+5:00", null))
-//
-//    }
 
 }

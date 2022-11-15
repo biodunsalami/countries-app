@@ -1,8 +1,11 @@
 package com.example.countriesapplication.viewModels
 
-import android.util.Log
 import androidx.lifecycle.*
-import com.example.countriesapplication.*
+import com.example.countriesapplication.Data.Data
+import com.example.countriesapplication.api.Repository
+import com.example.countriesapplication.models.myModels.CountryHeader
+import com.example.countriesapplication.models.myModels.CountryListItem
+import com.example.countriesapplication.models.myModels.MyCountry
 import kotlinx.coroutines.launch
 
 class CountriesViewModel(private val repository: Repository) : ViewModel() {

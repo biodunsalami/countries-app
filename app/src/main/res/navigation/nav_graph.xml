@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/countriesFragment"
-        android:name="com.example.countriesapplication.fragment.CountriesFragment"
+        android:name="com.example.countriesapplication.presentation.fragment.CountriesFragment"
         android:label="fragment_countries"
         tools:layout="@layout/fragment_countries" >
         <action
@@ -16,11 +16,11 @@
     </fragment>
     <fragment
         android:id="@+id/countryDetailsFragment"
-        android:name="com.example.countriesapplication.fragment.CountryDetailsFragment"
+        android:name="com.example.countriesapplication.presentation.fragment.CountryDetailsFragment"
         android:label="fragment_country_details"
         tools:layout="@layout/fragment_country_details" >
         <argument
             android:name="selectedCountry"
-            app:argType="com.example.countriesapplication.MyCountry" />
+            app:argType="com.example.countriesapplication.models.myModels.MyCountry" />
     </fragment>
 </navigation>

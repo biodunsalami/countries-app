@@ -1,5 +1,6 @@
-package com.example.countriesapplication
+package com.example.countriesapplication.api
 
+import com.example.countriesapplication.ApiService
 import com.example.countriesapplication.models.myModels.MyCountry
 
 class Repository(private val apiService: ApiService) {

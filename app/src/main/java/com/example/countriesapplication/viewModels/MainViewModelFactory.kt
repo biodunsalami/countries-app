@@ -2,6 +2,7 @@ package com.example.countriesapplication
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.countriesapplication.api.Repository
 import com.example.countriesapplication.viewModels.CountriesViewModel
 
 class MyViewModelFactory constructor(private val repository: Repository): ViewModelProvider.Factory {

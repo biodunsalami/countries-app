@@ -1,7 +1,6 @@
 package com.example.countriesapplication
 
-import com.example.countriesapplication.models.CountriesResponse
-import com.example.countriesapplication.models.CountriesResponseItem
+import com.example.countriesapplication.models.remote.CountriesResponseItem
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -16,7 +15,7 @@ private val BASEURL = "https://restcountries.com/v3.1/"
 interface ApiService {
 
     @GET("all")
-    suspend fun getCountries(): List<CountriesResponseItem>
+    suspend fun getCountries(): List<com.example.countriesapplication.models.remote.CountriesResponseItem>
 }
 
 

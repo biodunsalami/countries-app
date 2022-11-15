@@ -1,9 +1,10 @@
-package com.example.countriesapplication
+package com.example.countriesapplication.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.example.countriesapplication.R
 import com.example.countriesapplication.databinding.ActivityMainBinding
 
 
