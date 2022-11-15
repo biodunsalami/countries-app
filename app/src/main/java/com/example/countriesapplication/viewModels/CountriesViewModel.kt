@@ -18,7 +18,7 @@ class CountriesViewModel(private val repository: Repository) : ViewModel() {
         viewModelScope.launch {
             try {
                 val response = insertHeaders(repository.getCountries())
-                Log.e("Timber", response.toString())
+//                Log.e("Timber", response.toString())
                 _myResponse.value = response
             } catch (e: Exception) {
                 //Handle it

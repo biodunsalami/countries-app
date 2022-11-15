@@ -38,6 +38,8 @@ class CountriesFragment : Fragment() {
     lateinit var filterBottomSheetBinding: BottomSheetFilterBinding
     lateinit var filterBottomSheetDialog: BottomSheetDialog
 
+    private var aAdapter: BaseRecyclerAdapter<CountryListItem> = BaseRecyclerAdapter()
+
 
     var tempList = ArrayList<CountryListItem>()
 
@@ -48,6 +50,19 @@ class CountriesFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentCountriesBinding.inflate(inflater, container, false)
+
+
+
+        aAdapter.filterCriteria = { item, query ->
+            when (item) {
+                is MyCountry -> {
+                    item.name?.contains(query)!!
+                }
+                is CountryHeader -> {
+                    false
+                }
+            }
+        }
 
         return binding.root
 
@@ -76,11 +91,11 @@ class CountriesFragment : Fragment() {
 
 
         binding.uiModeCheckbox.setOnClickListener {
-            if (binding.uiModeCheckbox.isChecked){
+            if (binding.uiModeCheckbox.isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             }
 
-            if (!binding.uiModeCheckbox.isChecked){
+            if (!binding.uiModeCheckbox.isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
 
@@ -107,6 +122,8 @@ class CountriesFragment : Fragment() {
         }
 
 
+
+
         viewModel.myResponse.observe(viewLifecycleOwner) {
             if (it == null) {
                 return@observe
@@ -116,13 +133,40 @@ class CountriesFragment : Fragment() {
 
             setUpCountriesRv(tempList)
 
-            performSearch(it)
+//            performSearch(it)
         }
+
+        binding.searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                aAdapter.filter.filter(query)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                aAdapter.filter.filter(newText)
+
+                aAdapter.filterCriteria = { item, query ->
+                    when (item) {
+                        is MyCountry -> {
+                            item.name?.contains(query)!!
+                        }
+                        is CountryHeader -> {
+                            false
+                        }
+                    }
+                }
+                return false
+            }
+
+        })
+
+
+
     }
 
     private fun performSearch(list: List<CountryListItem>) {
 
-        Log.e("call", "E call am o")
+
 
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -137,14 +181,17 @@ class CountriesFragment : Fragment() {
                 tempList.clear()
                 val searchText = newText!!.lowercase(Locale.getDefault())
 
-                if (searchText.isNotEmpty()){
+                if (searchText.isNotEmpty()) {
 
                     for (item in list) {
                         when (item) {
                             is MyCountry -> {
 
+//                                list.filter { item.name?.contains(searchText) == true }
+
                                 if (item.name?.contains(searchText) == true) {
                                     tempList.add(item)
+//                                    Log.e("TheText",  )
                                 }
                             }
                             is CountryHeader -> {}
@@ -152,10 +199,11 @@ class CountriesFragment : Fragment() {
 
                     }
 
-                }else{
+                } else {
                     tempList.clear()
                     tempList.addAll(list)
                     setUpCountriesRv(tempList)
+                    aAdapter.notifyDataSetChanged()
                     binding.searchTextView.visibility = View.VISIBLE
 
                 }
@@ -165,8 +213,6 @@ class CountriesFragment : Fragment() {
                 return false
             }
         })
-
-        Log.e("FILTER_LIST", "$list")
 
 
     }
@@ -194,18 +240,6 @@ class CountriesFragment : Fragment() {
                 false
             )
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         val filterAdapter = BaseRecyclerAdapter<FilterModel>()
@@ -245,19 +279,11 @@ class CountriesFragment : Fragment() {
 
         filterBottomSheetBinding.filterRecyclerView
 
-
-
-
-
-
     }
-
-
 
 
     private fun setUpCountriesRv(list: List<CountryListItem>) {
         //Setup countries RV
-        val aAdapter = BaseRecyclerAdapter<CountryListItem>()
         aAdapter.listOfItems = list
 
         aAdapter.expressionOnGetItemViewType = { country ->
@@ -316,10 +342,7 @@ class CountriesFragment : Fragment() {
             adapter = aAdapter
         }
 
-        aAdapter.notifyDataSetChanged()
     }
-
-
 
 
     private fun languagesBottomSheetDialog() {
@@ -390,7 +413,7 @@ class CountriesFragment : Fragment() {
 
     }
 
-    private fun switchUIMode(){
+    private fun switchUIMode() {
 
     }
 
