@@ -53,16 +53,16 @@ class CountriesFragment : Fragment() {
 
 
 
-        aAdapter.filterCriteria = { item, query ->
-            when (item) {
-                is MyCountry -> {
-                    item.name?.contains(query)!!
-                }
-                is CountryHeader -> {
-                    false
-                }
-            }
-        }
+//        aAdapter.filterCriteria = { item, query ->
+//            when (item) {
+//                is MyCountry -> {
+//                    item.name?.contains(query)!!
+//                }
+//                is CountryHeader -> {
+//                    false
+//                }
+//            }
+//        }
 
         return binding.root
 
@@ -133,32 +133,25 @@ class CountriesFragment : Fragment() {
 
             setUpCountriesRv(tempList)
 
-//            performSearch(it)
+            performSearch(it)
         }
 
-        binding.searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                aAdapter.filter.filter(query)
-                return false
-            }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                aAdapter.filter.filter(newText)
 
-                aAdapter.filterCriteria = { item, query ->
-                    when (item) {
-                        is MyCountry -> {
-                            item.name?.contains(query)!!
-                        }
-                        is CountryHeader -> {
-                            false
-                        }
-                    }
-                }
-                return false
-            }
 
-        })
+//        binding.searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                aAdapter.filter.filter(query)
+//                return false
+//            }
+//
+//            override fun onQueryTextChange(newText: String?): Boolean {
+//                aAdapter.filter.filter(newText)
+//
+//                return false
+//            }
+//
+//        })
 
 
 
@@ -181,32 +174,56 @@ class CountriesFragment : Fragment() {
                 tempList.clear()
                 val searchText = newText!!.lowercase(Locale.getDefault())
 
-                if (searchText.isNotEmpty()) {
-
-                    for (item in list) {
-                        when (item) {
+                if (searchText.isNotEmpty()){
+                    list.forEach {item ->
+                        when (item){
                             is MyCountry -> {
-
-//                                list.filter { item.name?.contains(searchText) == true }
-
-                                if (item.name?.contains(searchText) == true) {
+                                if(item.name!!.lowercase(Locale.getDefault()).contains(searchText)){
                                     tempList.add(item)
-//                                    Log.e("TheText",  )
                                 }
                             }
                             is CountryHeader -> {}
                         }
-
                     }
 
-                } else {
+                    aAdapter.notifyDataSetChanged()
+
+                }else{
                     tempList.clear()
                     tempList.addAll(list)
-                    setUpCountriesRv(tempList)
                     aAdapter.notifyDataSetChanged()
-                    binding.searchTextView.visibility = View.VISIBLE
+
 
                 }
+
+
+
+//                if (searchText.isNotEmpty()) {
+//
+//                    for (item in list) {
+//                        when (item) {
+//                            is MyCountry -> {
+//
+////                                list.filter { item.name?.contains(searchText) == true }
+//
+//                                if (item.name?.contains(searchText) == true) {
+//                                    tempList.add(item)
+////                                    Log.e("TheText",  )
+//                                }
+//                            }
+//                            is CountryHeader -> {}
+//                        }
+//
+//                    }
+//
+//                } else {
+//                    tempList.clear()
+//                    tempList.addAll(list)
+//                    setUpCountriesRv(tempList)
+//                    aAdapter.notifyDataSetChanged()
+//                    binding.searchTextView.visibility = View.VISIBLE
+//
+//                }
 
 
 
@@ -285,6 +302,17 @@ class CountriesFragment : Fragment() {
     private fun setUpCountriesRv(list: List<CountryListItem>) {
         //Setup countries RV
         aAdapter.listOfItems = list
+
+        aAdapter.filterCriteria = { item, query ->
+            when (item) {
+                is MyCountry -> {
+                    item.name?.contains(query)!!
+                }
+                is CountryHeader -> {
+                    false
+                }
+            }
+        }
 
         aAdapter.expressionOnGetItemViewType = { country ->
             when (country) {

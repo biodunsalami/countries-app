@@ -64,6 +64,7 @@ class BaseRecyclerAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>(), Filter
                         filterCriteria.invoke(it, charString)
                     }?.forEach {
                         filteredList.add(it)
+                        listOfItemsFiltered.addAll(filteredList)
                     }
                 }
                 Log.e("SearchText", charString)
@@ -78,8 +79,9 @@ class BaseRecyclerAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>(), Filter
                     listOfItemsFiltered.clear()
                 }else{
                     p1.values as ArrayList<T>
+                    notifyDataSetChanged()
+
                 }
-                notifyDataSetChanged()
 
 //                Log.e("SearchText", charString)
 //                Log.e("filterResuslt", "$listOfItemsFiltered")
